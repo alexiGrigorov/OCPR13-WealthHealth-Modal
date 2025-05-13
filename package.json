@@ -1,0 +1,32 @@
+{
+  "name": "ocpr13-wealthhealth-modal",
+  "version": "0.1.0",
+  "description": "A reusable React Modal component for the WealthHealth project.",
+  "main": "dist/ocpr13-wealthhealth-modal.es.js",
+  "module": "dist/ocpr13-wealthhealth-modal.es.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexiGrigorov/OCPR13-WealthHealth-Modal.git"
+  },
+  "author": "Alexi GRIGOROV",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexiGrigorov/OCPR13-WealthHealth-Modal/issues"
+  },
+  "homepage": "https://github.com/alexiGrigorov/OCPR13-WealthHealth-Modal#readme",
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.4.1",
+    "vite": "^6.3.5"
+  }
+}
