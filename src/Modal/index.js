@@ -1,4 +1,4 @@
-import Modal from ".";
+import Modal from "./Modal";
 import Dialog from "./Dialog";
 import Header from "./Header";
 import Body from "./Body";
