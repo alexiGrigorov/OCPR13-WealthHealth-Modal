@@ -16,21 +16,13 @@ export default function CloseButton({
 }) {
   const { onClose } = useContext(ModalContext);
 
-  // Default top-right placement with 1em margin
-  const defaultStyle = {
-    display: "block",
-    marginInlineStart: "var(--modal-close-button-margin-inline-start, auto)",
-    marginBlockEnd: "var(--modal-close-button-margin-block-end, 1em)",
-  };
-  const combinedStyle = { ...defaultStyle, ...style };
-
   return (
     <button
       type="button"
       onClick={onClick || onClose}
       aria-label={ariaLabel || "Close dialog"}
       className={className}
-      style={combinedStyle}
+      style={style}
       {...props}
     >
       {children || "×"}
