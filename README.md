@@ -35,7 +35,7 @@ npm install @alexigrigorov/ocpr13-wealthhealth-modal
 
    ```jsx
    import React, { useState } from "react";
-   import { Modal } from "ocpr13-wealthhealth-modal";
+   import { Modal } from "@alexigrigorov/ocpr13-wealthhealth-modal";
 
    function App() {
      const [isOpen, setIsOpen] = useState(false);
