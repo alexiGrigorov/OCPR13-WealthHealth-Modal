@@ -1,5 +1,5 @@
 {
-  "name": "ocpr13-wealthhealth-modal",
+  "name": "@alexigrigorov/ocpr13-wealthhealth-modal",
   "version": "1.0.0",
   "description": "A reusable React Modal component for the WealthHealth project.",
   "main": "dist/ocpr13-wealthhealth-modal.es.js",

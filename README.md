@@ -8,15 +8,13 @@ Provides a flexible compound-component API and focus management without imposing
 ## Installation
 
 ```bash
-# From npm registry (once published)
-npm install ocpr13-wealthhealth-modal
-
-# Or directly from GitHub
-npm install github:alexiGrigorov/OCPR13-WealthHealth-Modal
+# From npm registry
+npm install @alexigrigorov/ocpr13-wealthhealth-modal
 ```
 
-**Peer Dependencies**  
-- **react** `^19.1.0`  
+**Peer Dependencies**
+
+- **react** `^19.1.0`
 - **react-dom** `^19.1.0`
 
 ---
@@ -28,15 +26,16 @@ npm install github:alexiGrigorov/OCPR13-WealthHealth-Modal
    ```html
    <body>
      <div id="root"></div>
-     <div id="modal"></div>  <!-- Required portal target -->
+     <div id="modal"></div>
+     <!-- Required portal target -->
    </body>
    ```
 
 2. **Use the Modal** in your React component:
 
    ```jsx
-   import React, { useState } from 'react';
-   import { Modal } from 'ocpr13-wealthhealth-modal';
+   import React, { useState } from "react";
+   import { Modal } from "ocpr13-wealthhealth-modal";
 
    function App() {
      const [isOpen, setIsOpen] = useState(false);
@@ -75,13 +74,13 @@ npm install github:alexiGrigorov/OCPR13-WealthHealth-Modal
 
 ### `<Modal />` props
 
-| Prop                   | Type            | Default  | Description                                                                                  |
-|------------------------|-----------------|----------|----------------------------------------------------------------------------------------------|
-| `isOpen` _(required)_  | `boolean`       | —        | Control open state (`true` = open, `false` = closed).                                        |
-| `onClose` _(required)_ | `() => void`    | —        | Called when the modal requests to close (ESC key, backdrop click, or close button).          |
-| `showCloseButton`      | `boolean`       | `true`   | Render a default `<Modal.CloseButton />` if you don’t provide one yourself.                  |
-| `disableBackdropClick` | `boolean`       | `false`  | When `true`, clicking the backdrop does **not** trigger `onClose`.                           |
-| _Other props_          | _various_       | —        | Forwarded to the underlying `<dialog>`: `className`, `style`, `id`, `aria-*`, etc.           |
+| Prop                   | Type         | Default | Description                                                                         |
+| ---------------------- | ------------ | ------- | ----------------------------------------------------------------------------------- |
+| `isOpen` _(required)_  | `boolean`    | —       | Control open state (`true` = open, `false` = closed).                               |
+| `onClose` _(required)_ | `() => void` | —       | Called when the modal requests to close (ESC key, backdrop click, or close button). |
+| `showCloseButton`      | `boolean`    | `true`  | Render a default `<Modal.CloseButton />` if you don’t provide one yourself.         |
+| `disableBackdropClick` | `boolean`    | `false` | When `true`, clicking the backdrop does **not** trigger `onClose`.                  |
+| _Other props_          | _various_    | —       | Forwarded to the underlying `<dialog>`: `className`, `style`, `id`, `aria-*`, etc.  |
 
 #### Compound Slots
 
@@ -113,13 +112,13 @@ Nest these components inside `<Modal>`:
 
 ## Accessibility
 
-- Uses native `<dialog>` with `role="dialog"` and `aria-modal="true"`.  
-- **Focus Management**:  
-  - Saves the previously focused element.  
-  - Moves focus into the dialog on open.  
-  - Restores focus on close.  
-- **Keyboard**:  
-  - **ESC key** closes the modal.  
+- Uses native `<dialog>` with `role="dialog"` and `aria-modal="true"`.
+- **Focus Management**:
+  - Saves the previously focused element.
+  - Moves focus into the dialog on open.
+  - Restores focus on close.
+- **Keyboard**:
+  - **ESC key** closes the modal.
   - **Backdrop click** closes the modal (unless `disableBackdropClick` is `true`).
 
 ---
@@ -149,7 +148,8 @@ This component is **unstyled by design**. Apply your own CSS via `className` or 
 
 ## Usage Patterns & Edge Cases
 
-1. **Orphan children auto-wrap**  
+1. **Orphan children auto-wrap**
+
    ```jsx
    <Modal isOpen onClose={...}>
      <p>This paragraph isn’t wrapped in `<Modal.Body>`.</p>
@@ -157,7 +157,8 @@ This component is **unstyled by design**. Apply your own CSS via `className` or 
    // Renders the paragraph inside Modal.Body automatically.
    ```
 
-2. **Custom Backdrop**  
+2. **Custom Backdrop**
+
    ```jsx
    <Modal isOpen onClose={...}>
      <Modal.Overlay className="fixed inset-0 bg-black/50 animate-fadeIn" />
@@ -165,7 +166,8 @@ This component is **unstyled by design**. Apply your own CSS via `className` or 
    </Modal>
    ```
 
-3. **ARIA & ID props**  
+3. **ARIA & ID props**
+
    ```jsx
    <Modal
      isOpen
@@ -182,13 +184,15 @@ This component is **unstyled by design**. Apply your own CSS via `className` or 
    </Modal>
    ```
 
-4. **Scrollable Content**  
+4. **Scrollable Content**
+
    ```css
    .modal-body--scroll {
      max-height: 60vh;
      overflow-y: auto;
    }
    ```
+
    ```jsx
    <Modal isOpen onClose={...}>
      <Modal.Body className="modal-body--scroll">
@@ -197,10 +201,11 @@ This component is **unstyled by design**. Apply your own CSS via `className` or 
    </Modal>
    ```
 
-5. **Nested / Stacked Modals**  
+5. **Nested / Stacked Modals**
+
    - Ensure a single `#modal` portal target—or separate containers—and manage `z-index` in your CSS.
 
-6. **Server-Side Rendering (SSR)**  
+6. **Server-Side Rendering (SSR)**
    - On SSR, `document.getElementById("modal")` may be `null`; the component returns `null` until hydration.
 
 ---
@@ -220,7 +225,7 @@ npm run build
 ## Contributing
 
 - **Issues & Discussions:**  
-  https://github.com/alexiGrigorov/OCPR13-WealthHealth-Modal/issues  
+  https://github.com/alexiGrigorov/OCPR13-WealthHealth-Modal/issues
 - **Pull Requests:** Welcome! Please follow existing code style and add tests where applicable.
 
 ---
